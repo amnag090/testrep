@@ -35,8 +35,12 @@ public class MainActivity extends AppCompatActivity {
                 IntentIntegrator integrator = new IntentIntegrator(act);
                 integrator.setDesiredBarcodeFormats(IntentIntegrator.ALL_CODE_TYPES);
                 integrator.setPrompt("Scan");
+                
+                integrator.setPrompt("Use Volume +/- button to use flash");
                 integrator.setCameraId(0);
                 integrator.setBeepEnabled(true);
+                integrator.setOrientationLocked(false);
+                integrator.setCaptureActivity(CaptureActivityPortrait.class);
                 integrator.setBarcodeImageEnabled(true);
                 integrator.initiateScan();
 
